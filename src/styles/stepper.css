@@ -1,0 +1,85 @@
+.stepper-bar {
+    background:#eee;
+    display:flex;
+    margin: 0;
+    margin-left:-30px;
+}
+.stepper-bar .step{
+    position:relative;
+    width:100%;
+}
+.stepper-bar :first-child:after
+.stepper-bar .step p{
+    font-size:18px;
+    font-weight: bold;
+    margin-bottom:15px;
+}
+.stepper-bar .step:last-child .bullet:before,
+.stepper-bar .step:last-child .bullet:after{
+    display:none;
+}
+.stepper-bar .step .bullet:before,
+.stepper-bar .step .bullet:after{
+    position:absolute;
+    content:'';
+    height:3px;
+    width: 470px;
+    background:rgb(218, 217, 217);
+;
+    bottom:11px;
+    right:-470px;
+}
+.stepper-bar .step .bullet.active:after{
+    background-color: #f26323;
+    transform:scaleX(0);
+    transform-origin: left;
+    animation: animate 0.3s linear forwards;
+}
+@keyframes animate{
+    100%{
+        transform : scaleX(1)
+        
+    }
+}
+.stepper-bar .step .bullet{
+    display:relative;
+    height:25px;
+    width:25px;
+    display:inline-block;
+    border-radius:50%;
+    font-size:15px;
+    line-height:25px;
+    transition: 0.2s;
+    background:rgb(218, 217, 217);
+}
+.stepper-bar .step .bullet.active{
+    background-color: #f26323;
+}
+.stepper-bar .step  .bullet span{
+    font-weight: 500;
+    font-size:17px;
+    line-height:25px;
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%)
+
+}
+.stepper-bar .step  .bullet.active span{
+    display:none;
+}
+.stepper-bar .step  .check{
+    display:none;
+    position:absolute;
+    left:50%;
+    top:55%;
+    font-size:22px;
+    transform: translate(-50%, -50%)
+}
+.stepper-bar .step .bullet.active .check{
+    display:block;
+    color:white;
+
+}
+.stepper-bar .step p{
+    margin-left:-15px;
+}
